@@ -173,7 +173,7 @@ variable name New
 
 
 # "namespace eval" creates a new namespace if it doesn't exist.  A namespace
-# can contain both routines and variables:
+# can contain routines, variables, and other namespaces:
 namespace eval people {
     namespace eval person1 {
         variable name Neo
@@ -422,8 +422,7 @@ eval {set name Neo}
 eval [list set greeting "Hello, $name"]
 
 
-# Therefore, when using "eval", , use "list" to build
-# up the desired command:
+# Therefore, when using "eval", , use "list" to build # up the desired command:
 set command {set name}
 lappend command {Archibald Sorbisol}
 eval $command
